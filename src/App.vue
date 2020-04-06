@@ -2,42 +2,45 @@
   <v-app>
     <v-app-bar
       app
-      color="primary"
-      dark
+      color="#e3e3e3"
     >
-      <div class="d-flex align-center">
         <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
           contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
+          class="shrink mt-1"
+          :src="require('./assets/logocuisine.png')"
+          height="65"
+          width="70"
+          position="left"
+         />
+      <v-toolbar-title
+        class="display-1"
       >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
+      Blabla
+      </v-toolbar-title>
+
+      <div class="search-bar">
+      <v-row>
+      <v-col cols="12">
+          <v-text-field
+            solo
+            label="Search"
+            append-icon='fa-search'
+            @click:append="Search"
+          >
+          </v-text-field>
+
+        </v-col>
+      </v-row>
+      </div>
+    <v-spacer></v-spacer>
+
+    <v-btn class="ma-2" text icon>
+        <v-icon>fa-user</v-icon>
+    </v-btn>
+
     </v-app-bar>
 
-    <v-content>
+     <v-content>
       <HelloWorld/>
     </v-content>
   </v-app>
@@ -55,6 +58,19 @@ export default {
 
   data: () => ({
     //
-  })
+  }),
+  methods: {
+    Search () {
+      alert('hello')
+    }
+  }
 }
 </script>
+
+<style>
+  .search-bar{
+    margin-top: 30px;
+    margin-left: 380px;
+    width: 600px;
+  }
+</style>
