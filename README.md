@@ -32,4 +32,4 @@ recipes. They will be able to find a recipe with what they already have, without
 | ----------------------- |:--------------:| 
 | 19/03/2020 - 07/04/2020 | <ul><li>Define the project</li><li>Create mock up with Figma</li><li>Choose a name</li><li>Write the list of functionalities</li><li>Test different apis</li><li>Start coding the design part</li></ul> | 
 | 07/04/2020 - 14/04/2020 | <ul><li>Realize cocktail page with all the functionalities</li><li>Realize food recipe page with all the main functionalities</li></ul> | 
-| 07/04/2020 - 14/04/2020 | <ul><li>Test and validation of the project</li><li>Correction of bugs</li><li>Preparation of the oral</li></ul> |
+| 07/04/2020 - 21/04/2020 | <ul><li>Test and validation of the project</li><li>Correction of bugs</li><li>Preparation of the oral</li></ul> |
