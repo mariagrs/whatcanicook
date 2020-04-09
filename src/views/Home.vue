@@ -65,7 +65,7 @@
     </v-container>
     <br><br>
     <v-card class="d-inline-block mx-auto" flat>
-    <h3 class="grey--text">En manque d'inspiration ?(anglais)</h3>
+    <h2 class="grey--text">Lack of inspiration ?</h2>
     </v-card>
     <FoodCard/>
     <br>
