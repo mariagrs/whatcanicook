@@ -33,14 +33,13 @@
         </v-col>
       </v-row>
       </div>
-
     </v-app-bar>
+
     <SecondNavbar/>
 
     <v-container
     height="500"
     width="100%"
-    id="scroll-target"
     >
     <v-card
     outlined
