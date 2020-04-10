@@ -20,8 +20,10 @@
       </template>
       <v-list>
         <v-list-item
+          class="backgroundColor"
           v-for="item in links"
           :key="item.title"
+          :to="item.route"
         >
           <v-list-item-title>{{ item.title }}</v-list-item-title>
         </v-list-item>
@@ -47,6 +49,7 @@
         <v-list-item
           v-for="item in links"
           :key="item.title"
+          :to="item.route"
         >
           <v-list-item-title>{{ item.title }}</v-list-item-title>
         </v-list-item>
@@ -72,6 +75,7 @@
         <v-list-item
           v-for="item in links"
           :key="item.title"
+          :to="item.route"
         >
           <v-list-item-title>{{ item.title }}</v-list-item-title>
         </v-list-item>
@@ -97,6 +101,7 @@
         <v-list-item
           v-for="item in links"
           :key="item.title"
+          :to="item.route"
         >
           <v-list-item-title>{{ item.title }}</v-list-item-title>
         </v-list-item>
@@ -122,6 +127,7 @@
         <v-list-item
           v-for="item in links"
           :key="item.title"
+          :to="item.route"
         >
           <v-list-item-title>{{ item.title }}</v-list-item-title>
         </v-list-item>
@@ -147,6 +153,7 @@
         <v-list-item
           v-for="item in links"
           :key="item.title"
+          :to="item.route"
         >
           <v-list-item-title>{{ item.title }}</v-list-item-title>
         </v-list-item>
@@ -162,13 +169,12 @@
 export default {
 
   name: 'SecondNavbar',
-  drawer: false,
   data () {
     return {
       links: [
-        { title: 'Recipes' },
-        { title: 'Main Dish' },
-        { title: 'Dessert' }
+        { title: 'Breakfast', route: '/' },
+        { title: 'Main Dish', route: '/' },
+        { title: 'Dessert', route: '/' }
       ]
     }
   }
@@ -177,4 +183,7 @@ export default {
 </script>
 
 <style>
+.backgroundColor{
+  background-color: white;
+}
 </style>
