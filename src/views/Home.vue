@@ -40,6 +40,7 @@
     <v-container
     height="500"
     width="100%"
+    id="scroll-target"
     >
     <v-card
     outlined
@@ -65,14 +66,25 @@
     </v-container>
     <br><br>
     <v-card class="d-inline-block mx-auto" flat>
-    <h2 class="grey--text">Lack of inspiration ?</h2>
+    <h2 class="black--text">Lack of inspiration ?</h2>
     </v-card>
+
     <FoodCard/>
-    <br>
-    <FoodCard/>
-    <br>
-    <FoodCard/>
-    <!--<p>hello</p>-->
+    <br><br>
+
+    <div class="text-right positionnement">
+    <v-btn
+        fab
+        dark
+        color="black"
+        @click="toTop"
+        class="mx-12 white--text"
+      >
+      <v-icon dark>mdi-arrow-up</v-icon>
+    </v-btn>
+    </div>
+
+    <Footer/>
   </v-app>
 </template>
 
@@ -80,19 +92,23 @@
 // @ is an alias to /src
 import SecondNavbar from '@/components/SecondNavbar.vue'
 import FoodCard from '@/components/FoodCard.vue'
+import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'Home',
   components: {
     SecondNavbar,
-    FoodCard
+    FoodCard,
+    Footer
   },
   data: () => ({
-    //
   }),
   methods: {
     Search () {
       alert('hello')
+    },
+    toTop () {
+      this.$vuetify.goTo(0)
     }
   }
 }
@@ -106,5 +122,9 @@ export default {
   }
   .rounded{
     border-radius: 5%;
+  }
+  .positionnement{
+    bottom: 0;
+    margin-bottom: 150px;
   }
 </style>
