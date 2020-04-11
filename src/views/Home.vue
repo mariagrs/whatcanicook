@@ -1,40 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar app
-      color="#e3e3e3"
-    >
-      <v-img
-        contain
-        class="shrink mt-1"
-        :src="require('../assets/logocuisine.png')"
-        height="65"
-        width="70"
-        position="left"
-      />
-      <v-toolbar-title
-        class="headline"
-      >
-      What can I cook
-      </v-toolbar-title>
-
-      <v-spacer></v-spacer>
-
-      <div class="search-bar">
-      <v-row>
-      <v-col cols="12">
-          <v-text-field
-            solo
-            label="Ingredient, dish, keyword.."
-            append-icon='fa-search'
-            @click:append="Search"
-          >
-          </v-text-field>
-
-        </v-col>
-      </v-row>
-      </div>
-    </v-app-bar>
-
+    <MainNavbar/>
     <SecondNavbar/>
 
     <v-container
@@ -88,7 +54,7 @@
 </template>
 
 <script>
-// @ is an alias to /src
+import MainNavbar from '@/components/MainNavbar.vue'
 import SecondNavbar from '@/components/SecondNavbar.vue'
 import FoodCard from '@/components/FoodCard.vue'
 import Footer from '@/components/Footer.vue'
@@ -96,6 +62,7 @@ import Footer from '@/components/Footer.vue'
 export default {
   name: 'Home',
   components: {
+    MainNavbar,
     SecondNavbar,
     FoodCard,
     Footer
