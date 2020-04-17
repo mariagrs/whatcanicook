@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Recipe from '../views/RecipeInstruction.vue'
-import Cocktail from '../views/Cocktail.vue'
+import Recipe from '../views/Recipe.vue'
+import Category from '../views/Category.vue'
+import Search from '../views/Search.vue'
 
 Vue.use(VueRouter)
 
@@ -13,15 +14,21 @@ const routes = [
     component: Home
   },
   {
-    path: '/Cocktail/:id',
-    name: 'Cocktail',
-    component: Cocktail
-  },
-  {
-    path: '/RecipeInstruction',
+    path: '/recipe/:id',
     name: 'Recipe',
     component: Recipe
+  },
+  {
+    path: '/category/:type/:name',
+    name: 'Category',
+    component: Category
+  },
+  {
+    path: '/search',
+    name: 'Search',
+    component: Search
   }
+
 ]
 
 const router = new VueRouter({

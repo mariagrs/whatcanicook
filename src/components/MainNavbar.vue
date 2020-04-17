@@ -2,6 +2,7 @@
   <v-app-bar app
   color="#e3e3e3"
   >
+  <router-link to="/">
   <v-img
       contain
       class="shrink mt-1"
@@ -10,6 +11,7 @@
       width="70"
       position="left"
   />
+  </router-link>
   <v-toolbar-title
       class="headline"
   >

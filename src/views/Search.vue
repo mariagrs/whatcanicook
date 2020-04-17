@@ -48,7 +48,7 @@
         :key="result.id"
         cols="7"
         >
-        <RecipeCard :src="imageSrc(result.id)" :title="result.title" :route ="`/Recipe/${result.id}`"/>
+        <RecipeCard :src="imageSrc(result.id)" :title="result.title" :route ="`/recipe/${result.id}`"/>
       </v-col>
     </v-row>
     <Footer/>
