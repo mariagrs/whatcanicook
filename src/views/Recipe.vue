@@ -136,11 +136,6 @@ export default {
 </script>
 
 <style>
-  .search-bar{
-    margin-top: 30px;
-    margin-left: 380px;
-    width: 600px;
-  }
   .rounded{
     border-radius: 50%;
   }

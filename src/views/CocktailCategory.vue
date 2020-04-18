@@ -8,12 +8,12 @@
     class="ml-12 mr-12"
     justify="center"
     align="center"
-    v-for="result in results"
-    :key="result.id">
+    v-for="result in alcoholicDrinks"
+    :key="result.idDrink">
       <v-col
       cols="7"
       >
-        <RecipeCard :src="imageSrc(result.id)" :title="result.title" :route ="`/recipe/${result.id}`"/>
+        <RecipeCard :src="result.strDrinkThumb + '/preview'" :title="result.strDrink" :route ="`/cocktail/${result.idDrink}`"/>
       </v-col>
     </v-row>
     <div class="text-right">
@@ -39,48 +39,37 @@ export default {
     RecipeCard
   },
   data: () => ({
-    results: []
+    alcoholicDrinks: []
   }),
   methods: {
 
-    getType () {
-      return this.$route.params.type
-    },
     getName () {
       return this.$route.params.name
-    },
-    imageSrc (id) {
-      return 'https://spoonacular.com/recipeImages/' + id + '-240x150.jpg'
     },
     toTop () {
       this.$vuetify.goTo(0)
     },
-    loadRecipes () {
-      var params = {
-        apiKey: 'a580fafc28554f4a9ac047dcd8325266'
+    loadCocktails () {
+      var params = {}
+      if (this.getName() === 'alcoholic') {
+        params.a = 'Alcoholic'
+      } else if (this.getName() === 'non alcoholic') {
+        params.a = 'Non_Alcoholic'
       }
-      if (this.getType() === 'diet') {
-        params.diet = this.getName()
-      } else if (this.getType() === 'type') {
-        params.type = this.getName()
-      } else if (this.getType() === 'cuisine') {
-        params.cuisine = this.getName()
-      }
-
-      axios.get('https://api.spoonacular.com/recipes/complexSearch', { params }).then(res => {
-        this.results = res.data.results
+      axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?', { params }).then(response => {
+        this.alcoholicDrinks = response.data.drinks
       })
     }
   },
   watch: {
     '$route' (to, from) {
-      if (to.path.startsWith('/recipes')) {
-        this.loadRecipes()
+      if (to.path.startsWith('/cocktails')) {
+        this.loadCocktails()
       }
     }
   },
   mounted () {
-    this.loadRecipes()
+    this.loadCocktails()
   }
 }
 </script>
