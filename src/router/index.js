@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Recipe from '../views/Recipe.vue'
 import Category from '../views/Category.vue'
+import Cocktail from '../views/Cocktail.vue'
+import CocktailCategory from '../views/CocktailCategory.vue'
 import Search from '../views/Search.vue'
 
 Vue.use(VueRouter)
@@ -19,9 +21,19 @@ const routes = [
     component: Recipe
   },
   {
-    path: '/category/:type/:name',
+    path: '/cocktail/:id',
+    name: 'Cocktail',
+    component: Cocktail
+  },
+  {
+    path: '/recipes/category/:type/:name',
     name: 'Category',
     component: Category
+  },
+  {
+    path: '/cocktails/category/:name',
+    name: 'CocktailCategory',
+    component: CocktailCategory
   },
   {
     path: '/search',
