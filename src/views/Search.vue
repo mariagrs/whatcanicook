@@ -1,7 +1,5 @@
 <template>
   <v-app>
-    <MainNavbar/>
-    <SecondNavbar/>
     <v-row
       dense
       class="ml-12 mr-12"
@@ -51,26 +49,16 @@
         <RecipeCard :src="imageSrc(result.id)" :title="result.title" :route ="`/recipe/${result.id}`"/>
       </v-col>
     </v-row>
-    <Footer/>
   </v-app>
 </template>
 
 <script>
-import MainNavbar from '@/components/MainNavbar.vue'
-import SecondNavbar from '@/components/SecondNavbar.vue'
-import Footer from '@/components/Footer.vue'
 import RecipeCard from '@/components/RecipeCard.vue'
-// import SearchBar from '@/components/SearchBar.vue'
 import axios from 'axios'
-
 export default {
   name: 'Home',
   components: {
-    MainNavbar,
-    SecondNavbar,
-    Footer,
-    RecipeCard// ,
-    // SearchBar
+    RecipeCard
   },
   data: () => ({
     results: [],
@@ -96,7 +84,6 @@ export default {
         type: this.typeValue,
         diet: this.dietValue
       }
-
       axios.get('https://api.spoonacular.com/recipes/complexSearch', { params }).then(res => {
         this.results = res.data.results
         console.log(this.results)
@@ -110,7 +97,6 @@ export default {
       query: this.getSearchQuery(),
       apiKey: '7f611fc7f9e34b598ca07d543eab276e'
     }
-
     axios.get('https://api.spoonacular.com/recipes/search', { params }).then(res => {
       this.results = res.data.results
       console.log(this.results)
@@ -118,18 +104,3 @@ export default {
   }
 }
 </script>
-
-<style>
-  .search-bar{
-    margin-top: 30px;
-    margin-left: 380px;
-    width: 600px;
-  }
-  .rounded{
-    border-radius: 5%;
-  }
-  .positionnement{
-    bottom: 0;
-    margin-bottom: 150px;
-  }
-</style>
