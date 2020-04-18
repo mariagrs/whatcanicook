@@ -173,35 +173,35 @@ export default {
       results: [],
       drawer: false,
       recipes: [
-        { title: 'Appetizer', route: '/category/type/appetizer' },
-        { title: 'Breakfast', route: '/category/type/breakfast' },
-        { title: 'Main Course', route: '/category/type/main%20course' },
-        { title: 'Dessert', route: '/category/type/dessert' }
+        { title: 'Appetizer', route: '/recipes/category/type/appetizer' },
+        { title: 'Breakfast', route: '/recipes/category/type/breakfast' },
+        { title: 'Main Course', route: '/recipes/category/type/main%20course' },
+        { title: 'Dessert', route: '/recipes/category/type/dessert' }
       ],
       healthy: [
-        { title: 'Salad', route: '/category/type/salad' },
-        { title: 'Soup', route: '/category/type/soup' }
+        { title: 'Salad', route: '/recipes/category/type/salad' },
+        { title: 'Soup', route: '/recipes/category/type/soup' }
       ],
       diet: [
-        { title: 'Vegetarian', route: '/category/diet/vegetarian' },
-        { title: 'Vegan', route: '/category/diet/vegan' },
-        { title: 'Gluten-free', route: '/category/diet/gluten%20free' },
-        { title: 'Ketogenic', route: '/category/diet/ketogenic' }
+        { title: 'Vegetarian', route: '/recipes/category/diet/vegetarian' },
+        { title: 'Vegan', route: '/recipes/category/diet/vegan' },
+        { title: 'Gluten-free', route: '/recipes/category/diet/gluten%20free' },
+        { title: 'Ketogenic', route: '/recipes/category/diet/ketogenic' }
       ],
       continent: [
-        { title: 'American', route: '/category/cuisine/american' },
-        { title: 'Latin American', route: '/category/cuisine/latin%20american' },
-        { title: 'Italian', route: '/category/cuisine/italian' },
-        { title: 'Chinese', route: '/category/cuisine/chinese' }
+        { title: 'American', route: '/recipes/category/cuisine/american' },
+        { title: 'Latin American', route: '/recipes/category/cuisine/latin%20american' },
+        { title: 'Italian', route: '/recipes/category/cuisine/italian' },
+        { title: 'Chinese', route: '/recipes/category/cuisine/chinese' }
       ],
       quickRecipes: [
-        { title: 'Snack', route: '/category/type/snack' },
-        { title: 'Marinade', route: '/category/type/marinade' },
-        { title: 'Beverage', route: '/category/type/beverage' }
+        { title: 'Snack', route: '/recipes/category/type/snack' },
+        { title: 'Marinade', route: '/recipes/category/type/marinade' },
+        { title: 'Beverage', route: '/recipes/category/type/beverage' }
       ],
       cocktails: [
-        { title: 'Whith Alcohol', route: '/category' },
-        { title: 'Without Alcohol', route: '/category' }
+        { title: 'Alcoholic', route: '/cocktails/category/alcoholic' },
+        { title: 'Non Alcoholic', route: '/cocktails/category/non%20alcoholic' }
       ]
     }
   }
