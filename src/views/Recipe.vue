@@ -35,7 +35,7 @@
           </template>
           <span>servings</span>
           </v-tooltip>
-          <h4 class=" mt-2 white--text">{{results.servings}}</h4>
+          <h4 class=" mt-2 white--text">{{results.servings}} person </h4>
 
           <v-tooltip bottom>
           <template v-slot:activator="{ on }">
@@ -43,7 +43,7 @@
           </template>
           <span>time</span>
           </v-tooltip>
-          <h4 class=" mt-2 white--text">{{results.readyInMinutes}}</h4>
+          <h4 class=" mt-2 white--text">{{results.readyInMinutes}} minutes </h4>
 
           <v-tooltip bottom>
           <template v-slot:activator="{ on }">
