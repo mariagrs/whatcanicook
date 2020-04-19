@@ -64,229 +64,31 @@
       justify="center">
         <v-card-title>Ingredients :</v-card-title>
         <v-row class="text-wrap ml-4" v-for="result in results.drinks" :key="result.id">
-          <v-col v-if="result.strIngredient1 != null">
-              <v-avatar
+          <v-row class="text-wrap ml-4" v-for="n in 10" :key="n">
+            <v-col v-if="result['strIngredient'+ n] != null">
+                           <v-avatar
             class="rounded ml-6"
             size="80"
             tile
             >
               <v-img
-            :src="getIngredientImage(result.strIngredient1)"
+            :src="getIngredientImage(result['strIngredient' + n])"
           />
             </v-avatar>
-
-          </v-col>
-            <v-col cols="11" v-if="result.strIngredient1 != null">
-            <p class="font-weight-medium mx-auto"><b >{{result.strIngredient1}}</b>  {{result.strMeasure1}} </p>
-            </v-col>
-                      <v-col v-if="result.strIngredient2 != null">
-              <v-avatar
-            class="rounded ml-6"
-            size="80"
-            tile
-            >
-              <v-img
-            :src="getIngredientImage(result.strIngredient2)"
-          />
-            </v-avatar>
-
-          </v-col>
-            <v-col cols="11" v-if="result.strIngredient2 != null">
-            <p class="font-weight-medium mx-auto"><b >{{result.strIngredient2}}</b>  {{result.strMeasure2}} </p>
+                        <v-col cols="11" v-if="result['strIngredient' + n] != null">
+            <p class="font-weight-medium mx-auto"><b >Name: {{result['strIngredient' + n]}}</b>- Measure: {{result['strMeasure' + n]}} </p>
             </v-col>
 
-                      <v-col v-if="result.strIngredient3 != null">
-              <v-avatar
-            class="rounded ml-6"
-            size="80"
-            tile
-            >
-              <v-img
-            :src="getIngredientImage(result.strIngredient3)"
-          />
-            </v-avatar>
+          </v-col>
+          </v-row>
 
-          </v-col>
-            <v-col cols="11" v-if="result.strIngredient3 != null">
-            <p class="font-weight-medium mx-auto"><b >{{result.strIngredient3}}</b>  {{result.strMeasure3}} </p>
-            </v-col>
-                      <v-col v-if="result.strIngredient4 != null">
-              <v-avatar
-            class="rounded ml-6"
-            size="80"
-            tile
-            >
-              <v-img
-            :src="getIngredientImage(result.strIngredient4)"
-          />
-            </v-avatar>
-
-          </v-col>
-            <v-col cols="11" v-if="result.strIngredient4 != null">
-            <p class="font-weight-medium mx-auto"><b >{{result.strIngredient4}}</b>  {{result.strMeasure4}} </p>
-            </v-col>
-                      <v-col v-if="result.strIngredient5 != null">
-              <v-avatar
-            class="rounded ml-6"
-            size="80"
-            tile
-            >
-              <v-img
-            :src="getIngredientImage(result.strIngredient5)"
-          />
-            </v-avatar>
-
-          </v-col>
-            <v-col cols="11" v-if="result.strIngredient5 != null">
-            <p class="font-weight-medium mx-auto"><b >{{result.strIngredient5}}</b>  {{result.strMeasure5}} </p>
-            </v-col>
-                      <v-col v-if="result.strIngredient6 != null">
-              <v-avatar
-            class="rounded ml-6"
-            size="80"
-            tile
-            >
-              <v-img
-            :src="getIngredientImage(result.strIngredient6)"
-          />
-            </v-avatar>
-          </v-col>
-            <v-col cols="11" v-if="result.strIngredient6 != null">
-            <p class="font-weight-medium mx-auto"><b >{{result.strIngredient6}}</b>  {{result.strMeasure6}} </p>
-            </v-col>
-                            <v-col v-if="result.strIngredient7 != null">
-              <v-avatar
-            class="rounded ml-6"
-            size="80"
-            tile
-            >
-              <v-img
-            :src="getIngredientImage(result.strIngredient7)"
-          />
-            </v-avatar>
-          </v-col>
-            <v-col cols="11" v-if="result.strIngredient7 != null">
-            <p class="font-weight-medium mx-auto"><b >{{result.strIngredient7}}</b>  {{result.strMeasure7}} </p>
-            </v-col>
-                            <v-col v-if="result.strIngredient8 != null">
-              <v-avatar
-            class="rounded ml-6"
-            size="80"
-            tile
-            >
-              <v-img
-            :src="getIngredientImage(result.strIngredient8)"
-          />
-            </v-avatar>
-          </v-col>
-            <v-col cols="11">
-            <p class="font-weight-medium mx-auto"><b >{{result.strIngredient8}}</b>  {{result.strMeasure8}} </p>
-            </v-col>
-                            <v-col v-if="result.strIngredient9 != null">
-              <v-avatar
-            class="rounded ml-6"
-            size="80"
-            tile
-            >
-              <v-img
-            :src="getIngredientImage(result.strIngredient9)"
-          />
-            </v-avatar>
-          </v-col>
-            <v-col cols="11" v-if="result.strIngredient9 != null">
-            <p class="font-weight-medium mx-auto"><b >{{result.strIngredient9}}</b>  {{result.strMeasure9}} </p>
-            </v-col>
-                            <v-col v-if="result.strIngredient10 != null">
-              <v-avatar
-            class="rounded ml-6"
-            size="80"
-            tile
-            >
-              <v-img
-            :src="getIngredientImage(result.strIngredient10)"
-          />
-            </v-avatar>
-          </v-col>
-            <v-col cols="11" v-if="result.strIngredient10 != null">
-            <p class="font-weight-medium mx-auto"><b >{{result.strIngredient10}}</b>  {{result.strMeasure10}} </p>
-            </v-col>
-                            <v-col v-if="result.strIngredient11 != null">
-              <v-avatar
-            class="rounded ml-6"
-            size="80"
-            tile
-            >
-              <v-img
-            :src="getIngredientImage(result.strIngredient11)"
-          />
-            </v-avatar>
-          </v-col>
-            <v-col cols="11" v-if="result.strIngredient11 != null">
-            <p class="font-weight-medium mx-auto"><b >{{result.strIngredient11}}</b>  {{result.strMeasure11}} </p>
-            </v-col>
-                            <v-col v-if="result.strIngredient12 != null">
-              <v-avatar
-            class="rounded ml-6"
-            size="80"
-            tile
-            >
-              <v-img
-            :src="getIngredientImage(result.strIngredient12)"
-          />
-            </v-avatar>
-          </v-col>
-            <v-col cols="11" v-if="result.strIngredient12 != null">
-            <p class="font-weight-medium mx-auto"><b >{{result.strIngredient12}}</b>  {{result.strMeasure12}} </p>
-            </v-col>
-                            <v-col v-if="result.strIngredient13 != null">
-              <v-avatar
-            class="rounded ml-6"
-            size="80"
-            tile
-            >
-              <v-img
-            :src="getIngredientImage(result.strIngredient13)"
-          />
-            </v-avatar>
-          </v-col>
-            <v-col cols="11" v-if="result.strIngredient13 != null">
-            <p class="font-weight-medium mx-auto"><b >{{result.strIngredient13}}</b>  {{result.strMeasure13}} </p>
-            </v-col>
-                            <v-col v-if="result.strIngredient14 != null">
-              <v-avatar
-            class="rounded ml-6"
-            size="80"
-            tile
-            >
-              <v-img
-            :src="getIngredientImage(result.strIngredient14)"
-          />
-            </v-avatar>
-          </v-col>
-            <v-col cols="11" v-if="result.strIngredient14 != null">
-            <p class="font-weight-medium mx-auto"><b >{{result.strIngredient14}}</b>  {{result.strMeasure14}} </p>
-            </v-col>
-                            <v-col v-if="result.strIngredient15 != null">
-              <v-avatar
-            class="rounded ml-6"
-            size="80"
-            tile
-            >
-              <v-img
-            :src="getIngredientImage(result.strIngredient15)"
-          />
-            </v-avatar>
-          </v-col>
-            <v-col cols="11" v-if="result.strIngredient15 != null">
-            <p class="font-weight-medium mx-auto"><b >{{result.strIngredient15}}</b>  {{result.strMeasure15}} </p>
-            </v-col>
-        </v-row>
-        <v-card-title>Instruction :</v-card-title>
-        <v-row v-for="result in results.drinks" :key="result.id">
-          <v-col>
-       <p class="text-wrap ml-4"><b>{{result.strInstructions}}</b></p>
-          </v-col>
-        </v-row>
+            </v-row>
+            <v-card-title>Instruction :</v-card-title>
+            <v-row v-for="result in results.drinks" :key="result.id">
+              <v-col>
+          <p class="text-wrap ml-4"><b>{{result.strInstructions}}</b></p>
+              </v-col>
+            </v-row>
     </v-card>
    <div class="text-right">
     <v-btn
@@ -316,6 +118,12 @@ export default {
 
     getId () {
       return this.$route.params.id
+    },
+
+    getNumber (results, number) {
+      return results.strIngredient + number
+      // eslint-disable-next-line no-unreachable
+      console.log('result.strDrink' + number)
     },
 
     getIngredientImage (image) {
