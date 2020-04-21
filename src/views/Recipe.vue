@@ -94,7 +94,6 @@
 import axios from 'axios'
 
 export default {
-  name: 'Recipe',
   data: () => ({
     results: []
   }),

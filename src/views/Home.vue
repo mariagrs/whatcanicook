@@ -56,7 +56,6 @@ import FoodCard from '@/components/FoodCard.vue'
 import axios from 'axios'
 
 export default {
-  name: 'Home',
   components: {
     FoodCard
   },
