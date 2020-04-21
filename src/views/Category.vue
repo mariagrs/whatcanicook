@@ -1,7 +1,20 @@
 <template>
     <v-app>
     <v-row justify="center" class="mt-5 mb-5">
-        <h2 class="text-uppercase">{{this.getName()}}</h2>
+        <h2 class="text-uppercase" v-if="results.length != 0">{{this.getName()}}</h2>
+        <v-col
+        v-if="results.length === 0"
+        cols="7"
+        >
+        <v-alert
+        dense
+        outlined
+        type="error"
+        class="mt-5"
+        >
+        No recipes were found
+        </v-alert>
+      </v-col>
     </v-row>
     <v-row
     dense
