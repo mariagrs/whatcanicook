@@ -6,22 +6,21 @@
     >
     <v-card
     outlined
+    v-for="result_2 in results_2"
+    :key="result_2.id"
+    @click="$router.push(`/recipe/${result_2.id}`)"
     >
-      <v-row
-        v-for="result2 in results2"
-        :key="result2.id"
-        :to ="`/Recipe/${result2.id}`">
+      <v-row>
         <v-col cols="6"
         sm="6">
           <br><br><br>
           <h2 class=" mt-12 display-3 text-center">Try this recipe !</h2>
-          <p class=" mt-8 headline text-center">{{ result2.title }}</p>
+          <p class=" mt-8 headline text-center">{{ result_2.title }}</p>
         </v-col>
         <v-col cols="6"
         sm="6">
         <v-img
-          @click="$router.push(`/Recipe/${result2.id}`)"
-          :src="imageSrc(result2.id)"
+          :src="imageSrc(result_2.id)"
           height="100%"
           width="95%"
           class="rounded"
@@ -43,23 +42,11 @@
         :key="result.id"
         cols="3"
         >
-        <FoodCard :src="imageSrc(result.id)" :title="result.title"/>
+        <FoodCard :src="imageSrc(result.id)" :title="result.title" :route="`/recipe/${result.id}`"/>
         </v-col>
       </v-row>
       </v-container>
     </v-card>
-
-    <div class="text-right">
-      <v-btn
-        fab
-        dark
-        color="black"
-        @click="toTop"
-        class="mx-12 white--text"
-      >
-      <v-icon dark>mdi-arrow-up</v-icon>
-      </v-btn>
-    </div>
   </v-app>
 </template>
 
@@ -68,18 +55,14 @@ import FoodCard from '@/components/FoodCard.vue'
 import axios from 'axios'
 
 export default {
-  name: 'Home',
   components: {
     FoodCard
   },
   data: () => ({
     results: [],
-    results2: []
+    results_2: []
   }),
   methods: {
-    toTop () {
-      this.$vuetify.goTo(0)
-    },
     imageSrc (id) {
       return 'https://spoonacular.com/recipeImages/' + id + '-240x150.jpg'
     }
@@ -94,22 +77,15 @@ export default {
     }
     axios.get('https://api.spoonacular.com/recipes/random', { params }).then(res => {
       this.results = res.data.recipes
-      console.log(res.data)
     })
-    axios.get('https://api.spoonacular.com/recipes/random?apiKey=a580fafc28554f4a9ac047dcd8325266', { params2 }).then(res1 => {
-      this.results2 = res1.data.recipes
-      console.log(res1.data.recipes)
+    axios.get('https://api.spoonacular.com/recipes/random?apiKey=a580fafc28554f4a9ac047dcd8325266', { params2 }).then(response => {
+      this.results_2 = response.data.recipes
     })
   }
 }
 </script>
 
 <style>
-  .search-bar{
-    margin-top: 30px;
-    margin-left: 380px;
-    width: 600px;
-  }
   .rounded{
     border-radius: 5%;
   }

@@ -2,7 +2,6 @@
   <v-app-bar app
   color="#e3e3e3"
   >
-  <router-link to="/">
   <v-img
       contain
       class="shrink mt-1"
@@ -11,7 +10,6 @@
       width="70"
       position="left"
   />
-  </router-link>
   <v-toolbar-title
       class="headline"
   >
@@ -24,10 +22,12 @@
   <v-row>
   <v-col cols="12">
       <v-text-field
+          v-model="searchText"
           solo
           label="Ingredient, dish, keyword.."
           append-icon='fa-search'
           @click:append="Search"
+          @change="Search"
       >
       </v-text-field>
 
@@ -41,10 +41,12 @@
 
 export default {
   data: () => ({
+    searchText: ''
   }),
   methods: {
     Search () {
-      alert('hello')
+      this.$router.push({ path: '/search', query: { q: this.searchText } })
+      this.searchText = ''
     }
   }
 }

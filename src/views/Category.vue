@@ -7,26 +7,14 @@
     dense
     class="ml-12 mr-12"
     justify="center"
-    align="center">
-        <v-col
-        v-for="result in results"
-        :key="result.id"
-        cols="7"
-        >
-        <RecipeCard :src="imageSrc(result.id)" :title="result.title" :route ="`/Recipe/${result.id}`"/>
-        </v-col>
+    align="center"
+    v-for="result in results"
+    :key="result.id">
+      <v-col
+      cols="7">
+        <RecipeCard :src="imageSrc(result.id)" :title="result.title" :route ="`/recipe/${result.id}`"/>
+      </v-col>
     </v-row>
-    <div class="text-right">
-    <v-btn
-        fab
-        dark
-        color="black"
-        @click="toTop"
-        class="mx-12 white--text"
-      >
-      <v-icon dark>mdi-arrow-up</v-icon>
-    </v-btn>
-    </div>
     </v-app>
 </template>
 
@@ -52,26 +40,33 @@ export default {
     imageSrc (id) {
       return 'https://spoonacular.com/recipeImages/' + id + '-240x150.jpg'
     },
-    toTop () {
-      this.$vuetify.goTo(0)
+    loadRecipes () {
+      var params = {
+        apiKey: 'a580fafc28554f4a9ac047dcd8325266',
+        number: 50
+      }
+      if (this.getType() === 'diet') {
+        params.diet = this.getName()
+      } else if (this.getType() === 'type') {
+        params.type = this.getName()
+      } else if (this.getType() === 'cuisine') {
+        params.cuisine = this.getName()
+      }
+
+      axios.get('https://api.spoonacular.com/recipes/search', { params }).then(res => {
+        this.results = res.data.results
+      })
+    }
+  },
+  watch: {
+    '$route' (to, from) {
+      if (to.path.startsWith('/recipes')) {
+        this.loadRecipes()
+      }
     }
   },
   mounted () {
-    var params = {
-      apiKey: 'a580fafc28554f4a9ac047dcd8325266'
-    }
-    if (this.getType() === 'diet') {
-      params.diet = this.getName()
-    } else if (this.getType() === 'type') {
-      params.type = this.getName()
-    } else if (this.getType() === 'cuisine') {
-      params.cuisine = this.getName()
-    }
-
-    axios.get('https://api.spoonacular.com/recipes/complexSearch', { params }).then(res => {
-      this.results = res.data.results
-      console.log(this.results)
-    })
+    this.loadRecipes()
   }
 }
 </script>

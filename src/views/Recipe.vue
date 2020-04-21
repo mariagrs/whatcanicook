@@ -35,7 +35,7 @@
           </template>
           <span>servings</span>
           </v-tooltip>
-          <h4 class=" mt-2 white--text">{{results.servings}}</h4>
+          <h4 class=" mt-2 white--text">{{results.servings}} person </h4>
 
           <v-tooltip bottom>
           <template v-slot:activator="{ on }">
@@ -43,7 +43,7 @@
           </template>
           <span>time</span>
           </v-tooltip>
-          <h4 class=" mt-2 white--text">{{results.readyInMinutes}}</h4>
+          <h4 class=" mt-2 white--text">{{results.readyInMinutes}} minutes </h4>
 
           <v-tooltip bottom>
           <template v-slot:activator="{ on }">
@@ -87,17 +87,6 @@
         <p class="mx-5" v-html="results.instructions"></p>
       </v-card>
     </v-container>
-    <div class="text-right">
-    <v-btn
-        fab
-        dark
-        color="black"
-        @click="toTop"
-        class="mx-12 white--text"
-      >
-      <v-icon dark>mdi-arrow-up</v-icon>
-    </v-btn>
-    </div>
   </v-app>
 </template>
 
@@ -105,7 +94,6 @@
 import axios from 'axios'
 
 export default {
-  name: 'Recipe',
   data: () => ({
     results: []
   }),
@@ -118,9 +106,6 @@ export default {
     },
     imageIngredient (image) {
       return ' https://spoonacular.com/cdn/ingredients_100x100/' + image
-    },
-    toTop () {
-      this.$vuetify.goTo(0)
     }
   },
   mounted () {
@@ -136,11 +121,6 @@ export default {
 </script>
 
 <style>
-  .search-bar{
-    margin-top: 30px;
-    margin-left: 380px;
-    width: 600px;
-  }
   .rounded{
     border-radius: 50%;
   }

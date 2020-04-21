@@ -4,6 +4,8 @@ import Home from '../views/Home.vue'
 import Recipe from '../views/Recipe.vue'
 import Category from '../views/Category.vue'
 import Cocktail from '../views/Cocktail.vue'
+import CocktailCategory from '../views/CocktailCategory.vue'
+import Search from '../views/Search.vue'
 
 Vue.use(VueRouter)
 
@@ -14,25 +16,38 @@ const routes = [
     component: Home
   },
   {
-    path: '/Recipe/:id',
+    path: '/recipe/:id',
     name: 'Recipe',
     component: Recipe
   },
   {
-    path: '/Cocktail/:id',
+    path: '/cocktail/:id',
     name: 'Cocktail',
     component: Cocktail
   },
   {
-    path: '/Category/:type/:name',
+    path: '/recipes/category/:type/:name',
     name: 'Category',
     component: Category
+  },
+  {
+    path: '/cocktails/category/:name',
+    name: 'CocktailCategory',
+    component: CocktailCategory
+  },
+  {
+    path: '/search',
+    name: 'Search',
+    component: Search
   }
 
 ]
 
 const router = new VueRouter({
-  routes
+  routes,
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  }
 })
 
 export default router
