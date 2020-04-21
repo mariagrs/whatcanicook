@@ -42,7 +42,8 @@ export default {
     },
     loadRecipes () {
       var params = {
-        apiKey: 'a580fafc28554f4a9ac047dcd8325266'
+        apiKey: 'a580fafc28554f4a9ac047dcd8325266',
+        number: 50
       }
       if (this.getType() === 'diet') {
         params.diet = this.getName()
@@ -52,7 +53,7 @@ export default {
         params.cuisine = this.getName()
       }
 
-      axios.get('https://api.spoonacular.com/recipes/complexSearch', { params }).then(res => {
+      axios.get('https://api.spoonacular.com/recipes/search', { params }).then(res => {
         this.results = res.data.results
       })
     }
