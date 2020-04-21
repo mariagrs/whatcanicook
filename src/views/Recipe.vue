@@ -87,17 +87,6 @@
         <p class="mx-5" v-html="results.instructions"></p>
       </v-card>
     </v-container>
-    <div class="text-right">
-    <v-btn
-        fab
-        dark
-        color="black"
-        @click="toTop"
-        class="mx-12 white--text"
-      >
-      <v-icon dark>mdi-arrow-up</v-icon>
-    </v-btn>
-    </div>
   </v-app>
 </template>
 
@@ -118,9 +107,6 @@ export default {
     },
     imageIngredient (image) {
       return ' https://spoonacular.com/cdn/ingredients_100x100/' + image
-    },
-    toTop () {
-      this.$vuetify.goTo(0)
     }
   },
   mounted () {

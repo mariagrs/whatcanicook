@@ -11,22 +11,10 @@
     v-for="result in results"
     :key="result.id">
       <v-col
-      cols="7"
-      >
+      cols="7">
         <RecipeCard :src="imageSrc(result.id)" :title="result.title" :route ="`/recipe/${result.id}`"/>
       </v-col>
     </v-row>
-    <div class="text-right">
-    <v-btn
-        fab
-        dark
-        color="black"
-        @click="toTop"
-        class="mx-12 white--text"
-      >
-      <v-icon dark>mdi-arrow-up</v-icon>
-    </v-btn>
-    </div>
     </v-app>
 </template>
 
@@ -51,9 +39,6 @@ export default {
     },
     imageSrc (id) {
       return 'https://spoonacular.com/recipeImages/' + id + '-240x150.jpg'
-    },
-    toTop () {
-      this.$vuetify.goTo(0)
     },
     loadRecipes () {
       var params = {

@@ -48,17 +48,6 @@
       </v-container>
     </v-card>
 
-    <div class="text-right">
-      <v-btn
-        fab
-        dark
-        color="black"
-        @click="toTop"
-        class="mx-12 white--text"
-      >
-      <v-icon dark>mdi-arrow-up</v-icon>
-      </v-btn>
-    </div>
   </v-app>
 </template>
 
@@ -76,9 +65,6 @@ export default {
     results_2: []
   }),
   methods: {
-    toTop () {
-      this.$vuetify.goTo(0)
-    },
     imageSrc (id) {
       return 'https://spoonacular.com/recipeImages/' + id + '-240x150.jpg'
     }
@@ -104,11 +90,6 @@ export default {
 </script>
 
 <style>
-  .search-bar{
-    margin-top: 30px;
-    margin-left: 380px;
-    width: 600px;
-  }
   .rounded{
     border-radius: 5%;
   }
