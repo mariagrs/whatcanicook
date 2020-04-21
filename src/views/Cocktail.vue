@@ -58,24 +58,12 @@
         <p class="mx-5" v-text="result.strInstructions"></p>
       </v-card>
     </v-container>
-    <div class="text-right">
-    <v-btn
-        fab
-        dark
-        color="black"
-        @click="toTop"
-        class="mx-12 white--text"
-      >
-      <v-icon dark>mdi-arrow-up</v-icon>
-    </v-btn>
-    </div>
   </v-app>
 </template>
 
 <script>
 import axios from 'axios'
 export default {
-  name: 'Cocktail',
   data: () => ({
     alcoholicDrinks: []
   }),
@@ -85,9 +73,6 @@ export default {
     },
     imageIngredient (name) {
       return ' https://www.thecocktaildb.com/images/ingredients/' + name + '-Small.png'
-    },
-    toTop () {
-      this.$vuetify.goTo(0)
     }
   },
   mounted () {
@@ -97,6 +82,7 @@ export default {
   }
 }
 </script>
+
 <style>
   .rounded{
     border-radius: 5%;
