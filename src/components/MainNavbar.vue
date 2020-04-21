@@ -17,6 +17,7 @@
   </v-toolbar-title>
 
   <v-spacer></v-spacer>
+
   <div class="search-bar">
   <v-row>
   <v-col cols="12">

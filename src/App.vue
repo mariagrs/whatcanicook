@@ -1,12 +1,12 @@
 <template>
   <v-app>
-    <MainNavbar/>
   <v-content>
-     <SecondNavbar/>
+    <MainNavbar/>
+    <SecondNavbar/>
     <router-view></router-view>
     <GoToTop/>
+    <Footer/>
   </v-content>
-  <Footer/>
   </v-app>
 </template>
 
@@ -14,6 +14,7 @@
 import MainNavbar from '@/components/MainNavbar.vue'
 import SecondNavbar from '@/components/SecondNavbar.vue'
 import Footer from '@/components/Footer.vue'
+
 import GoToTop from '@/components/GoToTop.vue'
 
 export default {

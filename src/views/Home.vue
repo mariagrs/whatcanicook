@@ -47,7 +47,6 @@
       </v-row>
       </v-container>
     </v-card>
-
   </v-app>
 </template>
 
@@ -78,11 +77,9 @@ export default {
     }
     axios.get('https://api.spoonacular.com/recipes/random', { params }).then(res => {
       this.results = res.data.recipes
-      console.log(res.data)
     })
     axios.get('https://api.spoonacular.com/recipes/random?apiKey=a580fafc28554f4a9ac047dcd8325266', { params2 }).then(response => {
       this.results_2 = response.data.recipes
-      console.log(response.data.recipes)
     })
   }
 }
