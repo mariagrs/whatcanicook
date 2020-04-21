@@ -166,8 +166,6 @@
 <script>
 
 export default {
-
-  name: 'SecondNavbar',
   data () {
     return {
       results: [],
