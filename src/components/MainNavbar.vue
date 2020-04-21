@@ -44,7 +44,8 @@ export default {
   }),
   methods: {
     Search () {
-      this.$router.push({ path: 'search', query: { q: this.searchText } })
+      this.$router.push({ path: '/search', query: { q: this.searchText } })
+      this.searchText = ''
     }
   }
 }
