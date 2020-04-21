@@ -194,6 +194,7 @@ export default {
       ],
       quickRecipes: [
         { title: 'Snack', route: '/recipes/category/type/snack' },
+        { title: 'Fingerfood', route: '/recipes/category/type/fingerfood' },
         { title: 'Marinade', route: '/recipes/category/type/marinade' },
         { title: 'Beverage', route: '/recipes/category/type/beverage' }
       ],
