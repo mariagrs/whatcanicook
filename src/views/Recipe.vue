@@ -51,7 +51,8 @@
           </template>
           <span>vegan</span>
           </v-tooltip>
-          <h4 class=" mt-2 white--text">{{results.vegan}}</h4>
+          <h4 v-if="results.vegan === true" class=" mt-2 white--text">vegan</h4>
+          <h4 v-else class=" mt-2 white--text"> not vegan</h4>
 
           <v-tooltip bottom>
           <template v-slot:activator="{ on }">
@@ -59,7 +60,8 @@
           </template>
           <span>gluten-free</span>
           </v-tooltip>
-          <h4 class=" mt-2 white--text">{{results.glutenFree}}</h4>
+          <h4 v-if="results.glutenFree === true" class=" mt-2 white--text">gluten free</h4>
+          <h4 v-else class=" mt-2 white--text"> not gluten free</h4>
           </v-row>
       </v-card>
       <v-card
