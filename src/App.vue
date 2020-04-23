@@ -5,8 +5,8 @@
     <SecondNavbar/>
     <router-view></router-view>
     <GoToTop/>
-    <Footer/>
   </v-content>
+  <Footer/>
   </v-app>
 </template>
 
