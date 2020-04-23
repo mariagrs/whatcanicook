@@ -60,7 +60,14 @@
               v-if="recipes.length === 0"
               cols="7"
               >
-              <p>No recipes were found</p>
+              <v-alert
+              dense
+              outlined
+              type="error"
+              class="mt-5"
+              >
+              No recipes were found
+              </v-alert>
             </v-col>
           </v-row>
         </v-tab-item>
@@ -109,10 +116,16 @@
               <RecipeCard :src="result.strDrinkThumb" :title="result.strDrink" :route ="`/cocktail/${result.idDrink}`"/>
             </v-col>
             <v-col
-              v-if="cocktails.drinks === null || cocktails.length === 0"
+              v-if="cocktails.drinks === null || cocktails.drinks.length === 0"
               cols="7"
               >
-              <p>No cocktails were found</p>
+              <v-alert
+              dense
+              outlined
+              type="error"
+              class="mt-5"
+              >
+              No cocktails were found</v-alert>
             </v-col>
           </v-row>
         </v-tab-item>
