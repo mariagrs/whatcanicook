@@ -1,7 +1,7 @@
 <template>
   <v-app>
+  <MainNavbar/>
   <v-content>
-    <MainNavbar/>
     <SecondNavbar/>
     <router-view></router-view>
     <GoToTop/>

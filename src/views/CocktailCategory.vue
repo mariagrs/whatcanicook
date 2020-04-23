@@ -1,7 +1,7 @@
 <template>
     <v-app>
     <v-row justify="center" class="mt-5 mb-5">
-        <h2 class="text-uppercase" v-if="alcoholicDrinks.length != 0">{{this.getName()}}</h2>
+        <h2 class="text-uppercase" v-if="alcoholicDrinks.length !== 0">{{this.getName()}}</h2>
         <v-col
         v-if="alcoholicDrinks.length === 0"
         cols="7"
